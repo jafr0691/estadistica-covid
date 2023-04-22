@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Control covid</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">COVID control system</a>
+
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+
+        <br></br>
+<p>COVID-19 Incidence rate x 100K in the community: <input type="text" name="nombre" id="habitantes" /></p>
+
+<a class="boton" href="https://delphi.cmu.edu/covidcast/?signalType=value&mode=overview&signalR=true&level=msa" target="_blank">COVIDcast</a>
+<br></br>
+<p>Type of Space: <select class="browser-default custom-select" id="Vent_Factor">
+
+  <option value="0.25">Passenger car or taxi</option>
+  <option value="0.35" selected>Plexiglass canyon with low ceiling</option>
+  <option value="0.5">Very small room(<283 ft3)</option>
+  <option value="0.4">Bus or shuttle</option>
+  <option value="0.75">Room with low ceiling (8 ft or less)</option>
+  <option value="1">Room with medium height ceiling (8 to 14 ft)</option>
+  <option value="1.25">Room with a high ceiling (>14 ft)</option>
+  <option value="0.9">Aircraft Environment</option>
+</select> </p>
+
+
+<p>SARS-CoV-2 strain: <select class="browser-default custom-select" id="Strain">
+  <option value="1" selected>Original SARS-CoV-2 (no major mutations)</option>
+  <option value="1.4">Brazilian SARS-CoV-2 variant</option>
+  <option value="1.56">UK (Kent) SARS-CoV-2 variant</option>
+  <option value="1.7">South African SARS-CoV-2 variant</option>
+</select></p>
+
+<p>Number of individuals under analysis: <input type="text" name="nombre"/ id="Ind_Analysis"></p>
+
+<table class="table">
+
+  <thead>
+    <tr>
+      <th scope="col">Level of intervention</th>
+      <th scope="col">15</th>
+      <th scope="col">Contribution to overall protection</th>
+      <th scope="col">Remaining infection incidence rate per 100,000 individuals</th>
+	  <th scope="col">Remaining percentage of potentially infected people</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"> <select class="browser-default custom-select" id="dies">
+  <option value="1" selected>Self-health screening attestation</option>
+  <option value="2">No attestation</option>
+	  </th>
+      <td>Self-health attestation at home when checking-in</td>
+      <td id="c10">00%</td>
+      <td id="d10">00</td>
+      <td id="e10">00%</td>
+    </tr>
+    <tr>
+      <th scope="row"> <select class="browser-default custom-select" id="once">
+  <option value="1" selected>Body temperature screening</option>
+  <option value="2">Oxygen saturation screening</option>
+  <option value="3">No symptom screening</option>
+	  </th>
+      <td>Symptom screening</td>
+      <td id="c11">00%</td>
+      <td id="d11">00</td>
+	  <td id="e11">00%</td>
+    </tr>
+    <tr>
+      <th scope="row"> <select class="browser-default custom-select" style=" width: 300px;" id="doce">
+  <option value="1" selected>PCR Testing at the airport- immediate results</option>
+  <option value="2">AI Smartphone Cough Screening</option>
+  <option value="3">Rapid Testing Onsite</option>
+  <option value="4">Canine Screening</option>
+  <option value="5">Chromatography-breath analysis</option>
+  <option value="6">PCR Testing 72 hours before flying</option>
+  <option value="7">Human Olfactory Test Screening</option>
+  <option value="8">No</option>
+
+	  </th>
+      <td>COVID-19 testing</td>
+      <td id="c12">00%</td>
+      <td id="d12">00</td>
+	  <td id="e12">00%</td>
+    </tr>
+
+	<tr>
+      <th scope="row"> <select class="browser-default custom-select" style="width: 300px;" id="trece">
+  <option value="1" selected>All people wear surgical masks all the time</option>
+  <option value="2">An individual wears a surgical mask all the time</option>
+  <option value="3">All people wear non-surgical cloth masks all the time (from silk to cotton mix)</option>
+  <option value="4">An individual wears a non-surgical cloth mask</option>
+  <option value="5">Personal plastic face shields or goggles</option>
+  <option value="6">No personal protection equipment</option>
+
+
+	  </th>
+      <td>Personal protection (e.g. face masks)</td>
+      <td id="c13">00%</td>
+      <td id="d13">00</td>
+	  <td id="e13">00%</td>
+    </tr>
+
+	<tr>
+      <th scope="row"> <select class="browser-default custom-select"  style="width: 300px;" id="catorce">
+  <option value="1" selected>UVC on surfaces</option>
+  <option value="2">Electrostatic spraying of disinfectants</option>
+  <option value="3">Enhanced surface disinfection with EPA Cleaning Agents</option>
+  <option value="4">Regular surface disinfection with EPA Cleaners</option>
+  <option value="5">Poor surface disinfection</option>
+  <option value="6">No surface disinfection</option>
+	  </th>
+      <td>Surface disinfection</td>
+      <td id="c14">00%</td>
+      <td id="d14">00</td>
+	  <td id="e14">00%</td>
+    </tr>
+
+	<tr>
+      <th scope="row"> <select class="browser-default custom-select" style="width: 300px;" id="quinto">
+  <option value="1" selected>Outdoors</option>
+  <option value="2">Aircraft ventilation levels (More than 12 to 30 ACH)</option>
+  <option value="3">Good building ventilation conditions (More than 6 to 12 ACH)</option>
+  <option value="4">Standard building ventilation conditions (more than 3 to 6 ACH)</option>
+  <option value="5">Limited or passive ventilation conditions (Between 1 and 3 ACH)</option>
+  <option value="6">Home ventilation conditions- no mechanical ventilation (<1 ACH)</option>
+  <option value="7">No ventilation</option>
+	  </th>
+      <td>Ventilation</td>
+      <td id="c15">00%</td>
+      <td id="d15">00</td>
+	  <td id="e15">00%</td>
+    </tr>
+
+	<tr>
+      <th scope="row"> <select class="browser-default custom-select" id="dieciseis">
+  <option value="1" selected>Portable HEPA Filters in the room</option>
+  <option value="2">UVC disinfection of the air near the ceiling</option>
+  <option value="3">MERV 13 Filters</option>
+  <option value="4">MERV 8 Filters</option>
+  <option value="5">No filters of any kind</option>
+	  </th>
+      <td>Filters for air disinfection</td>
+      <td id="c16">00%</td>
+      <td id="d16">00</td>
+	  <td id="e16">00%</td>
+    </tr>
+
+	<tr>
+      <th scope="row"> <select class="browser-default custom-select" style="width: 300px;" id="diecisiete">
+  <option value="1" selected>Social distancing signaling and crowd control technologies</option>
+  <option value="2">No distancing signaling or crowd control technologies</option>
+	  </th>
+      <td>Signaling and crowd control</td>
+      <td id="c17">00%</td>
+      <td id="d17">00</td>
+	  <td id="e17">00%</td>
+    </tr>
+
+	<tr>
+      <th scope="row"> <select class="browser-default custom-select" id="dieciocho">
+  <option value="1" selected>Physical barriers (plexiglass or glass)</option>
+  <option value="2">No transparent physical barriers</option>
+	  </th>
+      <td>Physical barriers (e.g. plexiglass)</td>
+      <td id="c18">00%</td>
+      <td id="d18">00</td>
+	  <td id="e18">00%</td>
+    </tr>
+
+	<tr>
+      <th scope="row"> <select class="browser-default custom-select" id="diecinueve">
+  <option value="1" selected>Touchless technologies</option>
+  <option value="2">No</option>
+	  </th>
+      <td>Touchless technologies</td>
+      <td id="c19">00%</td>
+      <td id="d19">00</td>
+	  <td id="e19">00%</td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <select class="browser-default custom-select" id="veinte">
+  <option value="1" selected>Antimicrobial coatings and materials</option>
+  <option value="2">No antimicrobial coatings or materials</option>
+    </th>
+      <td>Antimicrobial Coatings and materials</td>
+      <td id="c20">00%</td>
+      <td id="d20">00</td>
+    <td id="e20">00%</td>
+    </tr>
+
+    <tr>
+    	<td colspan="5" style="background-color: #f5f2f2;">&nbsp;</td>
+    </tr>
+    <tr>
+      <th scope="col" style="width:20%" id="restante">0.02%</th>
+      <th scope="col" style="width:20%">  </th>
+      <th scope="col" style="width:20%">Average</th>
+      <th scope="col" style="width:20%">5th Percentile</th>
+	  <th scope="col" style="width:20%">5th Percentile</th>
+    </tr>
+    <tr>
+      <td colspan="2">Overall protection due to current COVID-19 prevention controls</td>
+      <td id="c21">00%</td>
+      <td id="d21">00</td>
+	  <td id="e21">00%</td>
+    </tr>
+
+</table>
+
+<div style="float:right;">
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item">Number of statistical infections/day in the population under analysis</li>
+  <li class="list-group-item" id="Ind_Analysis_total">12554515615</li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item">Estimated days to have one infection within the population under analysis when applying these COVID-19 controls</li>
+  <li class="list-group-item" id="total">0.155</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
